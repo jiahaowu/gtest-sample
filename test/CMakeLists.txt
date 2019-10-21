@@ -16,3 +16,4 @@ add_test(
   COMMAND
     ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/unit_tests
   )
+add_dependencies(unit_tests third_parties)
