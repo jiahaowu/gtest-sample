@@ -14,7 +14,7 @@ add_custom_target(third_parties)
 include(ExternalProject)
 ExternalProject_Add(
   google_gtest
-  URL https://github.com/google/googletest/archive/release-1.8.1.zip
+  URL https://github.com/google/googletest/archive/release-1.10.0.zip
   PREFIX ${PROJECT_SOURCE_DIR}/third/gtest
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${PROJECT_SOURCE_DIR}/third/gtest/build -DBUILD_SHARED_LIBS=OFF
   )
