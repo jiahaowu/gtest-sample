@@ -17,7 +17,7 @@ jobs:
         cmake --build .
       
     - name: test
-      run: ctest
+      run: cd build && ctest
         
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v1.0.1
