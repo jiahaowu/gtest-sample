@@ -9,6 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: get tools
+      run: pip install --user cpp-coveralls
+      
     - name: build 
       run: |
         mkdir build
@@ -19,7 +22,7 @@ jobs:
     - name: test
       run: cd build && ctest
         
-    - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v1.0.1
-      with:
-          github-token: ${{ secrets.github_token }}
+    - name: code coverage
+      run: |
+        cd build
+        coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
